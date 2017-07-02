@@ -1,0 +1,7 @@
+# linter
+flake8
+
+# testing:
+pytest
+tox
+coverage

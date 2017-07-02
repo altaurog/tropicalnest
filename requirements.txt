@@ -1,0 +1,25 @@
+# minimalist framework for building rest apis:
+falcon>=1.0.0
+
+# serialization lib:
+marshmallow>=2.9.0
+
+# http server:
+gevent
+gunicorn
+
+# aws api client:
+# boto
+
+# for making http requests:
+# urllib3
+# requests
+
+# auth:
+# PyJWT>=1.4.1
+
+# RDBMS:
+# psycopg2>=2.6.2
+# sqlalchemy
+
+# redis
