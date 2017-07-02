@@ -5,3 +5,7 @@ flake8
 pytest
 tox
 coverage
+
+# documentation:
+# docutils
+# sphinx
