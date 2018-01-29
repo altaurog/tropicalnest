@@ -1,75 +1,25 @@
-Python Skeleton
-================
+StackSphere
+===========
 
-Installation
--------------
+Yet another troposphere helper lib
 
-* Use an up-to-date python3 (currently 3.6.1)
-* Setup a virtualenv.  To install virtualenv in bash::
-
-    wget https://github.com/altaurog/venvinstaller/raw/master/venvinstaller.sh
-    bash venvinstaller.sh
-    source ~/.bashrc  # or start a new shell
-    mkvirtualenv -p python3.6 myproject
-
-* Clone this repo
-* Adjust dependencies in requirements.txt
-* Install dependencies::
-
-    pip install -r requirements.txt -r dev-requirements.txt
-
-* Adjust package metadata in ``setup.py``
-
-  Requirements are specified in both ``requirements.txt`` and
-  ``setup.py``.  The ones in ``setup.py`` will be automatically installed if
-  they aren't already when you ``pip install`` this package.  Technically
-  it isn't necessary to have them in both places but they often turn out to
-  be useful in different context, plus you can make specific version
-  requirements stricter in ``requirements.txt`` than in ``setup.py``, which
-  is useful for development with well-known set of package versions and
-  then testing or distributing with a wider set of dependency versions.
-
-* Update upstream remote and push
-* Install package in develop mode::
-
-    pip install -e .
-
-* Profit!
-
-The Stack
+Overview
 ---------
 
-* `Falcon <https://falconframework.org/>`_ - minimalist framework for
-  building rest apis
+The troposphere library provides an interface for generating Amazon
+Cloudformation templates in python.  It also provides type-checking
+and validation of a stack.
 
-* `Marshmallow <https://marshmallow.readthedocs.io/>`_ - serialization
+The goal of this library is to extend the functionality of troposphere to
+better facilitate nesting templates, to perform type-checking on parameters
+passed to nested templates, and to ease creation and update of
+cloudformation stacks.
 
-* `Sqlalchemy <https://www.sqlalchemy.org/>`_ - SQL engine.  (Also has an
-  ORM, but preferred to use the core engine directly without ORM.)
+Specific Goals
+--------------
 
-* `Gunicorn <https://pypi.python.org/pypi/gunicorn>`_ - preforking HTTP/WSGI server
+* Generate template urls from Python module paths
 
-* `gevent <http://www.gevent.org/>`_ - use this as concurrent worker for
-  Gunicorn.
+* Type check parameters passed to nested templates
 
-* boto or `boto3 <https://github.com/boto/boto3>`_ - interface to AWS rest API.
-
-* `requests <http://docs.python-requests.org/en/latest/>`_ - HTTP requests
-  library.
-
-* `psycopg2 <http://initd.org/psycopg/>`_ - postgresql client
-
-* `py.test <http://pytest.org/latest/>`_ - testing framework
-
-* `tox <https://tox.readthedocs.io/>`_ - automate tests in multiple
-  environments.
-
-* code `coverage <https://pypi.python.org/pypi/coverage>`_
-
-* `docutils <http://docutils.sourceforge.net/>`_ - tools for writing
-  documentation and working with reStructuredText markup.
-
-* `Sphinx <http://www.sphinx-doc.org/en/latest/>`_ - documentation
-  generation, based on docutils
-
-For more, see `Awesome Python <https://github.com/vinta/awesome-python>`_.
+* Order resources by dependency and deploy stack incrementally

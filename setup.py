@@ -1,20 +1,15 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='package-name',
+    name='tropicalnest',
     version=0.1,
-    description='Description',
-    author='your name here',
-    author_email='your email here',
-    license=['proprietary'],
-    packages=[
-        # list python paths of all packages and subpackages
-        # (relative directory paths with . separator instead of /)
-        # or use find_packages() instead of list--only works if
-        # you touch __init__.py in all your code dirs
-    ],
+    description='Extension for troposphere cloudformation library',
+    author='Aryeh Leib Taurog',
+    author_email='python@aryehleib.com',
+    license=['BSD'],
+    packages=['tropicalnest'],
     zip_safe=False,
-    install_requires=['falcon', 'requests'],
+    install_requires=['boto3', 'troposphere'],
     entry_points={
         'console_scripts': [
             # 'commandname=module.path:function'
