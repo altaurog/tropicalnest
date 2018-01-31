@@ -1,5 +1,5 @@
-StackSphere
-===========
+tropicalnest
+============
 
 Helper for nesting templates with troposphere
 
